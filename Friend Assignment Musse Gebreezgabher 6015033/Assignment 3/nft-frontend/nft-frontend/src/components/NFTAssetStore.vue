@@ -70,8 +70,6 @@
 import { connectWallet, getContract } from "../web3";
 import { ethers } from "ethers";
 import axios from "axios";
-import { onMounted } from 'vue';
-// import terminal from 'vite-plugin-terminal'
 
 export default {
   name: "Marketplace",
@@ -133,17 +131,6 @@ export default {
           try {
             const asset = await contract.getAssetDetails(tokenId);
             const owner = await contract.ownerOf(tokenId);
-            console.log("Checking ID:", asset.tokenId); 
-            console.log("Checking Asset:", asset.forSale); 
-
-        // terminal.log('Asset Data from Terminal:', asset) 
-
-           if (
-             owner === signer.address  || asset.forSale === true
-
-           ) {
-
-
 
             let metadata = null;
             let image = "";
@@ -159,8 +146,6 @@ export default {
               image = "";
             }
 
-           
-
             assets.push({
               id: tokenId,
               title: asset.title || metadata?.name || `NFT #${tokenId}`,
@@ -175,8 +160,6 @@ export default {
               owner,
               listingPrice: ethers.formatEther(asset.sellingPrice),
             });
-                        }
-
           } catch (error) {
             continue;
           }

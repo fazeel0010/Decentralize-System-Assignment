@@ -3,13 +3,6 @@ import nftStoreABI from "./NFTAssetStore.json";
 
 const nftStoreAddress = "0x83216BA405c520bA8D479E283fd81E4a6e0A5E0d";
 
-// User 1 API Keys
-export const pinataApiKey = "d79cae6dd714851af346";
-export const pinataSecretKey = "1dcbd8225bf717c078eae38e55a65b8ef0d682368c225514b10ab5f03e10adfb";
-
-// User account 2 API Keys 
-//export const pinataApiKey = "a23cae6sd724841af143";
-//export const pinataSecretKey = "2ddba8325cf718c078eae38e55a65b8ef0d6823s8c125514210sb5c02e40aaca";
 
 // Connects MetaMask and returns the provider, signer, and wallet address.
 export async function connectWallet() {
